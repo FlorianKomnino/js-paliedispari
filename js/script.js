@@ -45,6 +45,25 @@ console.log(exampleReversedString == exampleStringTrimmedAndLowed);
 // =======================================================================================================
 // =======================================================================================================
 
+function customStringCleaner(yourString) {
+    yourString = yourString.trim();
+    yourString = yourString.replace(/\s/g, '');
+    yourString = yourString.toLowerCase();
+    const regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
+    yourString = yourString.replace(regex, '');
+    console.log('dopo pulizia da: punteggiatura, spazi vuoti e maiuscole');
+    console.log(yourString);
+    return yourString
+}
+
+let customExampleString = 'Questa é una prova Per vedere come funzionano le funzioni'
+
+console.log(`questo é il risultato ${customExampleString}`);
+
+
+customExampleString = customStringCleaner(customExampleString);
+
+console.log(`questo é il risultato \" ${customExampleString} \"`);
 
 
 // =======================================================================================================
@@ -61,42 +80,43 @@ function randomNumWithMinMax (min, max) {
 }
 
 // % chiedo all'utente di scegliere pari o dispari, possibilmente con fare da gangster, cappello e cerino in bocca annessi
-alert('Scegli! Pari o disapri?');
-
-// % gli estorco la suddetta informazione tramite un prompt
+alert('Scegli! Pari o dispari?');
 let userOddOrEven = prompt('Inserisci la tua scelta');
+userOddOrEven = customStringCleaner(userOddOrEven);
 
-// % torturo l'utente fino ad ottenere una sclta valida
-while (userOddOrEven.toLowerCase() != 'pari' && userOddOrEven.toLowerCase() != 'dispari') {
+// % torturo l'utente fino ad ottenere una scelta valida
+while (userOddOrEven != 'pari' && userOddOrEven != 'dispari') {
     alert('Inserisci una scelta valida mascalzone!');
-    userChosenNumber = parseInt(prompt('Inserisci la tua scelta: pari o dispari?'), 10);
+    userOddOrEven = prompt('Inserisci la tua scelta: pari o dispari?');
+    userOddOrEven = customStringCleaner(userOddOrEven);
 }
 
 // % reperisco anche il numero scelto dall'utente tra 1 e 5
     let userChosenNumber = parseInt(prompt('inserisci un numero da 1 a 5'), 10);
 
-// % obbligo l'utente a darmi un numero tra 1 e 5
+// % obbligo l'utente a darmi un numero tra 1 e 5 se non lo ha fatto fin dall'inizio di sua spontanea volontà
     while (userChosenNumber < 1 || userChosenNumber > 5) {
         alert('Inserisci un numero VALIDO da 1 a 5');
         userChosenNumber = parseInt(prompt('inserisci un numero da 1 a 5'), 10);
     }
 
-
-
-
-// %
+// % genero un numero casuale per il computer compreso tra 1 e 5 attraverso la relativa funzione
 const randomComputersNumber = randomNumWithMinMax(1, 5);
 
+// % stampo in console i numeri ottenuti in questo modo
 console.log(userChosenNumber);
 console.log(randomComputersNumber);
 
+// % faccio la somma dei numeri ottenuti in questo modo e la stampo in console
 let numbersSum = randomComputersNumber + userChosenNumber;
-
 console.log(numbersSum);
 
+// % assegno alla variabile numbersSumOddOrEven il valore di numbersSum
 numbersSumOddOrEven = numbersSum
 
+// % verifico attraverso operatore modulo parità o disparità e assegno relativo valore stringa alla variabile numbersSumOddOrEven con operatore ternario
 numbersSum % 2 == 0 ? numbersSumOddOrEven = 'pari' : numbersSumOddOrEven = 'dispari';
 
+// % verifico con operatore ternario se la scelta dell'utente è stata vincente oppure no ed emetto relativo alert
 (numbersSumOddOrEven == userOddOrEven) ? alert('Complimenti! Hai vinto!!!') : alert('Hai perso! Ritenta, avrai più fortuna la prossima volta!!!');
 
