@@ -38,3 +38,20 @@ for ( let i = (exampleStringTrimmedAndLowed.length - 1 ) ; i > -1 ; i--) {
 console.log(exampleReversedString);
 
 console.log(exampleReversedString == exampleStringTrimmedAndLowed);
+
+// =======================================================================================================
+// =======================================================================================================
+// ======================================== SECONDA PARTE ================================================
+// =======================================================================================================
+// =======================================================================================================
+
+function randomNumWithMinMax (min, max) {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1) + min)
+
+    return randomNumber;
+}
+
+let userWarning = alert('Scegli! Pari o disapri?');
+const userOddOrEven = prompt('Inserisci la tua scelta');
+const userChosenNumber = prompt('inserisci un numero da 1 a 5');
+let randomComputersNumber = (randomNumWithMinMax(1, 5));
