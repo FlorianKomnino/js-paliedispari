@@ -51,7 +51,21 @@ function randomNumWithMinMax (min, max) {
     return randomNumber;
 }
 
-let userWarning = alert('Scegli! Pari o disapri?');
+alert('Scegli! Pari o disapri?');
 const userOddOrEven = prompt('Inserisci la tua scelta');
-const userChosenNumber = prompt('inserisci un numero da 1 a 5');
-let randomComputersNumber = (randomNumWithMinMax(1, 5));
+const userChosenNumber = parseInt(prompt('inserisci un numero da 1 a 5'), 10);
+const randomComputersNumber = randomNumWithMinMax(1, 5);
+
+console.log(userChosenNumber);
+console.log(randomComputersNumber);
+
+let numbersSum = randomComputersNumber + userChosenNumber;
+
+console.log(numbersSum);
+
+numbersSumOddOrEven = numbersSum
+
+numbersSum % 2 == 0 ? numbersSumOddOrEven = 'pari' : numbersSumOddOrEven = 'dispari';
+
+(numbersSumOddOrEven == userOddOrEven) ? alert('Complimenti! Hai vinto!!!') : alert('Hai perso! Ritenta, avrai più fortuna la prossima volta!!!');
+
