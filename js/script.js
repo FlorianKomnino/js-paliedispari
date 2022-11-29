@@ -22,8 +22,7 @@ console.log(exampleStringTrimmed);
 
 // per rendere tutte le lettere minuscole
 
-exampleStringTrimmedAndLowed = exampleStringTrimmed;
-exampleStringTrimmedAndLowed = exampleStringTrimmedAndLowed.toLowerCase();
+exampleStringTrimmedAndLowed = exampleStringTrimmed.toLowerCase();
 console.log('dopo aver reso tutte le lettere minuscole');
 console.log(exampleStringTrimmedAndLowed);
 
@@ -34,3 +33,13 @@ for ( let i = (exampleStringTrimmedAndLowed.length - 1 ) ; i > -1 ; i--) {
 }
 
 console.log(lettersArray);
+
+let exampleCreatedString = '';
+
+for ( i = 0 ; i < lettersArray.length ; i++) {
+    exampleCreatedString += lettersArray[i];
+}
+
+console.log(exampleCreatedString);
+
+console.log(exampleCreatedString == exampleStringTrimmedAndLowed);
