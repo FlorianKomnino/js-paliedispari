@@ -41,19 +41,50 @@ console.log(exampleReversedString == exampleStringTrimmedAndLowed);
 
 // =======================================================================================================
 // =======================================================================================================
+// ======================================== FUNZIONI ADDIZIONALI =========================================
+// =======================================================================================================
+// =======================================================================================================
+
+
+
+// =======================================================================================================
+// =======================================================================================================
 // ======================================== SECONDA PARTE ================================================
 // =======================================================================================================
 // =======================================================================================================
 
+// ^ funzione per generare un numero randomico entro due numeri limite minimo e massimo compresi
 function randomNumWithMinMax (min, max) {
     const randomNumber = Math.floor(Math.random() * (max - min + 1) + min)
 
     return randomNumber;
 }
 
+// % chiedo all'utente di scegliere pari o dispari, possibilmente con fare da gangster, cappello e cerino in bocca annessi
 alert('Scegli! Pari o disapri?');
-const userOddOrEven = prompt('Inserisci la tua scelta');
-const userChosenNumber = parseInt(prompt('inserisci un numero da 1 a 5'), 10);
+
+// % gli estorco la suddetta informazione tramite un prompt
+let userOddOrEven = prompt('Inserisci la tua scelta');
+
+// % torturo l'utente fino ad ottenere una sclta valida
+while (userOddOrEven.toLowerCase() != 'pari' && userOddOrEven.toLowerCase() != 'dispari') {
+    alert('Inserisci una scelta valida mascalzone!');
+    userChosenNumber = parseInt(prompt('Inserisci la tua scelta: pari o dispari?'), 10);
+}
+
+// % reperisco anche il numero scelto dall'utente tra 1 e 5
+    let userChosenNumber = parseInt(prompt('inserisci un numero da 1 a 5'), 10);
+
+// % obbligo l'utente a darmi un numero tra 1 e 5
+    while (userChosenNumber < 1 || userChosenNumber > 5) {
+        alert('Inserisci un numero VALIDO da 1 a 5');
+        userChosenNumber = parseInt(prompt('inserisci un numero da 1 a 5'), 10);
+    }
+
+
+
+
+// %
 const randomComputersNumber = randomNumWithMinMax(1, 5);
 
 console.log(userChosenNumber);
