@@ -28,20 +28,13 @@ exampleStringTrimmedAndLowed = exampleStringTrimmed.toLowerCase();
 console.log('dopo aver reso tutte le lettere minuscole');
 console.log(exampleStringTrimmedAndLowed);
 
-let lettersArray = [];
+// per ribaltare la parola
+let exampleReversedString = '';
 
 for ( let i = (exampleStringTrimmedAndLowed.length - 1 ) ; i > -1 ; i--) {
-    lettersArray.push(exampleStringTrimmedAndLowed.charAt(i));
+    exampleReversedString += (exampleStringTrimmedAndLowed[i]);
 }
 
-console.log(lettersArray);
+console.log(exampleReversedString);
 
-let exampleCreatedString = '';
-
-for ( i = 0 ; i < lettersArray.length ; i++) {
-    exampleCreatedString += lettersArray[i];
-}
-
-console.log(exampleCreatedString);
-
-console.log(exampleCreatedString == exampleStringTrimmedAndLowed);
+console.log(exampleReversedString == exampleStringTrimmedAndLowed);
