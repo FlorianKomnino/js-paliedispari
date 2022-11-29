@@ -1,6 +1,8 @@
 console.log('Hello World!');
 
-let exampleString = 'I topi, non avevano nipoti';
+const askForUserText = prompt('Inserisci un testo e vediamo se è un palindromo:')
+
+let exampleString = askForUserText;
 
 console.log(exampleString);
 
